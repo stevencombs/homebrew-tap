@@ -1,6 +1,6 @@
 cask "grokgauge" do
-  version "0.3.0"
-  sha256 "f2a1ce893646ac18413f234ddbfb4f9e522691d278f42b61dd2caebc76a6c687"
+  version "0.9.1"
+  sha256 "2a255241525a1851a6a01d813533ee3768f51ee810796c06413cd75918b6cf4f"
 
   url "https://github.com/stevencombs/GrokGauge/releases/download/v#{version}/GrokGauge-#{version}.zip"
   name "GrokGauge"
@@ -26,7 +26,10 @@ cask "grokgauge" do
 
   uninstall quit: "com.retrocombs.GrokGauge"
 
-  zap trash: "~/Library/Preferences/com.retrocombs.GrokGauge.plist"
+  zap trash: [
+    "~/Library/Application Support/GrokGauge",
+    "~/Library/Preferences/com.retrocombs.GrokGauge.plist",
+  ]
 
   caveats <<~EOS
     GrokGauge is ad-hoc signed, not notarized by Apple. This cask removed the
