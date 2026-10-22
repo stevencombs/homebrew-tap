@@ -4,14 +4,17 @@ Homebrew casks by [Steven Combs (retroCombs)](https://www.youtube.com/@retroComb
 
 ```sh
 brew install --cask stevencombs/tap/grokgauge
+brew install --cask stevencombs/tap/clipgauge
 ```
 
 | Cask | What it is |
 | --- | --- |
 | [`grokgauge`](Casks/grokgauge.rb) | [GrokGauge](https://github.com/stevencombs/GrokGauge): your SuperGrok and Grok Bot weekly usage in the macOS menu bar (macOS 14+, Apple silicon and Intel). |
+| [`clipgauge`](Casks/clipgauge.rb) | [ClipGauge](https://stevencombs.github.io/ClipGauge/): renames and sorts your video and photo clips with local AI (Ollama + whisper.cpp), from the macOS menu bar (macOS 14+, Apple silicon and Intel). Installs `ffmpeg`, `ollama` and `whisper.cpp`; AI models are pulled later in the app's Setup, only after you approve. |
 
-To update, run `brew upgrade --cask grokgauge`. To remove it, run `brew uninstall --cask grokgauge`
-(add `--zap` to also delete its preferences).
+To update, run `brew upgrade --cask grokgauge` (or `clipgauge`). To remove an app, run `brew uninstall --cask grokgauge`
+(or `clipgauge`); add `--zap` to also delete its preferences. Zapping ClipGauge never touches your project folder,
+clips, transcripts or AI models.
 
 ## About Gatekeeper
 
@@ -21,7 +24,13 @@ after installing it. Nothing else on your Mac is changed. If you'd rather review
 read the [source](https://github.com/stevencombs/GrokGauge) or build it yourself with
 `./scripts/build-app.sh`.
 
+ClipGauge works the same way: it is open source, ad-hoc signed and not notarized, and its cask clears the quarantine
+flag from `ClipGauge.app` only. Read the [source](https://github.com/stevencombs/ClipGauge) or build it yourself with
+`app/ClipGauge/build.sh`.
+
 GrokGauge is an unofficial community project. It is not affiliated with xAI or with Anysphere, the maker of Grok Bot.
+ClipGauge is an unofficial community project too. It is not made, endorsed, or supported by Blackmagic Design,
+Ollama, Alibaba (Qwen) or OpenAI (Whisper).
 
 ## License
 
