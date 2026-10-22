@@ -1,6 +1,6 @@
 cask "clipgauge" do
-  version "0.8.3"
-  sha256 "7f04ab83726b9feaa468bdcd3c13f7dcc826e5c330ca3e2fafdca2e0759daf9a"
+  version "0.8.4"
+  sha256 "b3fab562777c72e74ada6726966abfc452ebb921065a8d0f8aa613b671f31302"
 
   url "https://github.com/stevencombs/ClipGauge/releases/download/v#{version}/ClipGauge-#{version}.zip"
   name "ClipGauge"
